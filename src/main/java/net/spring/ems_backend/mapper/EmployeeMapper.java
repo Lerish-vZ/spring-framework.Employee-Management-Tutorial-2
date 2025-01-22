@@ -13,5 +13,12 @@ public class EmployeeMapper {
         ); //will map employee into employeedto
     }
 
-
+    public static Employee maptoEmployee(EmployeeDto employeeDto) {
+        return new Employee(
+                employeeDto.getId(),
+                employeeDto.getFirstName(),
+                employeeDto.getLastName(),
+                employeeDto.getEmail()
+        );
+    }
 }

@@ -10,8 +10,8 @@ public class EmployeeMapper {
                 employee.getFirstName(),
                 employee.getLastName(),
                 employee.getEmail()
-        );
+        ); //will map employee into employeedto
     }
 
-    
+
 }

@@ -1,4 +1,7 @@
 package net.spring.ems_backend.controller;
 
-public class EmployeeContoller {
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
 }

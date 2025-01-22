@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+//to transfer the data from client to server
+
 @Getter
 @Setter
 @NoArgsConstructor

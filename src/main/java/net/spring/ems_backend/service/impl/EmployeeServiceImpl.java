@@ -2,6 +2,8 @@ package net.spring.ems_backend.service.impl;
 
 import lombok.AllArgsConstructor;
 import net.spring.ems_backend.dto.EmployeeDto;
+import net.spring.ems_backend.entity.Employee;
+import net.spring.ems_backend.mapper.EmployeeMapper;
 import net.spring.ems_backend.repository.EmployeeRepository;
 import net.spring.ems_backend.service.EmployeeService;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
-        return null;
+        Employee employee = EmployeeMapper.maptoEmployee(employeeDto); // connected employee to employeeDto
+        Employee savedEmployee = employeeRepository.save(employee); //Save employeeDto to database
+        return EmployeeMapper.maptoEmployeeDto(savedEmployee);
     }
 }

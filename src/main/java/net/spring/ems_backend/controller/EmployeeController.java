@@ -21,8 +21,8 @@ public class EmployeeController {
     }
 
     //Build Get Employee REST API
-    @GetMapping
-    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long employeeId) {
+    @GetMapping("{id}")
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable("id") Long employeeId) {
         EmployeeDto employeeDto = employeeService.getEmployeeById(employeeId);
         return ResponseEntity.ok(employeeDto);
     }

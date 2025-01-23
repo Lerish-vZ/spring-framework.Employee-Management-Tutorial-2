@@ -32,6 +32,7 @@ public class EmployeeController {
     }
 
     //Build Get All Employee REST API
+    @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
        List<EmployeeDto> employees =  employeeService.getAllEmployees();
        return ResponseEntity.ok(employees);

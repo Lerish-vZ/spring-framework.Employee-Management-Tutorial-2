@@ -3,6 +3,7 @@ package net.spring.ems_backend.service.impl;
 import lombok.AllArgsConstructor;
 import net.spring.ems_backend.dto.EmployeeDto;
 import net.spring.ems_backend.entity.Employee;
+import net.spring.ems_backend.exception.ResourceNotFoundException;
 import net.spring.ems_backend.mapper.EmployeeMapper;
 import net.spring.ems_backend.repository.EmployeeRepository;
 import net.spring.ems_backend.service.EmployeeService;
@@ -22,6 +23,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto getEmployeeById(Long employeeId) {
+        employeeRepository.findById(employeeId)
+                .orElseThrow(()-> new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
         return null;
     }
 }

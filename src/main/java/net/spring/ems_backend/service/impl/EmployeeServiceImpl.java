@@ -19,4 +19,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee savedEmployee = employeeRepository.save(employee); //Save employeeDto to database
         return EmployeeMapper.maptoEmployeeDto(savedEmployee);
     }
+
+    @Override
+    public EmployeeDto getEmployeeById(Long employeeId) {
+        return null;
+    }
 }

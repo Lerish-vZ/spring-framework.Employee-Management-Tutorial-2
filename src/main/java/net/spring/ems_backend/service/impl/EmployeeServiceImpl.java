@@ -23,8 +23,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto getEmployeeById(Long employeeId) {
-        employeeRepository.findById(employeeId)
+     Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(()-> new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
-        return null;
+        return EmployeeMapper.maptoEmployeeDto(employee);
     }
 }
